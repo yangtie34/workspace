@@ -1,0 +1,505 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.administrator.uupt_helpsend.HelpSendActivity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+
+    <LinearLayout
+
+    style="@style/content_main"
+    android:id="@id/main_view"
+    android:baselineAligned="false">
+
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        style="@style/content_main_linear"
+        >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/img_back"
+            android:id="@+id/returnAction"
+            android:scaleType="center"
+            android:layout_alignParentLeft="true" />
+
+        <TextView
+            android:textSize="18dp"
+            android:textColor="#ff444444"
+            android:layout_height="match_parent"
+            android:text="UU帮你送"
+            android:gravity="center_vertical|center_horizontal"
+            android:layout_width="wrap_content"
+        android:ems="10"
+        android:layout_weight="0.97"/>
+
+        <ImageView
+            android:background="@drawable/account_tip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="false"
+            android:layout_marginTop="15dp"
+            android:gravity="center" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        style="@style/content_main_linear"
+        >
+
+        <LinearLayout
+            android:gravity="center"
+            android:orientation="vertical"
+            android:id="@id/switch_addr"
+            android:background="@drawable/white_selector"
+            android:layout_width="29dp"
+            android:layout_height="match_parent"
+            >
+
+            <View
+                android:background="@drawable/icon_loc_001_new"
+                android:layout_width="24.0dip"
+                android:layout_height="24.0dip" />
+
+            <View
+                android:background="@drawable/orde_icon_1"
+                android:layout_width="15dip"
+                android:layout_height="15dip"
+                android:layout_margin="3.0dip" />
+
+            <View
+                android:background="@drawable/icon_loc_002_new"
+                android:layout_width="24.0dip"
+                android:layout_height="24.0dip" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+               style="@style/content_main_linear_line.2">
+
+                <TextView
+                    android:text="发货地"
+                    style="@style/content_main_text"/>
+
+                <TextView
+                    style="@style/content_main_edit"
+                    android:text="123456"
+                    android:id="@+id/fhd"
+                    android:onClick="thisClick"
+                     />
+
+                <ImageView
+                    style="@style/menu_send" />
+
+                <ImageButton
+                    style="@style/line.y.right" />
+
+                <ImageView
+                    style="@style/btn_star"/>
+            </LinearLayout>
+
+            <ImageButton
+                style="@style/line.x"/>
+
+            <LinearLayout
+                style="@style/content_main_linear_line.2">
+
+                <TextView
+                    android:text="收货地"
+                    style="@style/content_main_text" />
+
+                <TextView
+                    style="@style/content_main_edit"
+                    android:onClick="thisClick"
+                    android:id="@+id/shd" />
+
+                <ImageView
+                    style="@style/menu_send" />
+
+                <ImageButton
+                 style="@style/line.y.right"
+                    />
+
+                <ImageView
+                    style="@style/btn_star" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+         style="@style/content_main_linear"
+      >
+
+        <LinearLayout
+            android:gravity="center"
+            android:orientation="vertical"
+            android:id="@id/switch_addr"
+            android:background="@drawable/white_selector"
+            android:layout_width="31dp"
+            android:layout_height="match_parent">
+
+            <View
+                android:background="@drawable/icon_loc_001_new"
+                android:layout_width="24.0dip"
+                android:layout_height="24.0dip" />
+
+            <View
+                android:background="@drawable/orde_icon_1"
+                android:layout_width="15dip"
+                android:layout_height="15dip"
+                android:layout_margin="3.0dip" />
+
+            <View
+                android:background="@drawable/icon_loc_002_new"
+                android:layout_width="24.0dip"
+                android:layout_height="24.0dip" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                style="@style/content_main_linear_line.2">
+
+                <TextView
+                    android:text="发货人"
+                    style="@style/content_main_text" />
+
+                <TextView
+                    style="@style/content_main_edit"
+                    android:onClick="thisClick"
+                    android:id="@+id/fhr" />
+
+                <TextView
+                    android:text="替他人收货"
+                    style="@style/content_main_text"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView2"
+                    android:layout_marginRight="0dp"
+                    android:layout_width="wrap_content"
+                    android:textColor="@color/lightgray" />
+
+                <ImageView
+                    style="@style/menu_send" />
+
+            </LinearLayout>
+
+            <ImageButton
+                style="@style/line.x"/>
+
+            <LinearLayout
+                style="@style/content_main_linear_line.2"
+                >
+
+                <TextView
+                    android:text="收货人"
+                    style="@style/content_main_text" />
+
+                <TextView
+                    android:id="@+id/shr"
+                    style="@style/content_main_edit"
+                    android:onClick="thisClick"/>
+
+                <ImageView
+                    style="@style/menu_send"
+                    android:src="@drawable/fgb_icon_reads_contacts"
+                    android:layout_width="33dp"
+                    android:layout_height="32dp"
+                    android:onClick="opentxl"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        style="@style/content_main_linear"
+        >
+        <LinearLayout
+            style="@style/content_main_linear_line.1"
+            >
+        <TextView
+            android:text="物品类型"
+            style="@style/content_main_text" />
+
+        <TextView
+            android:id="@id/wplx"
+            style="@style/content_main_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="thisClick"/>
+
+        <ImageView
+            style="@style/menu_send" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        style="@style/content_main_linear">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                style="@style/content_main_linear_line.2">
+
+                <TextView
+                    android:text="备注留言"
+                    style="@style/content_main_text"  />
+
+                <EditText
+                    style="@style/content_main_edit" />
+
+            </LinearLayout>
+
+            <ImageButton
+                style="@style/line.x"/>
+
+            <LinearLayout
+                style="@style/content_main_linear_line.2">
+
+                <TextView
+                    android:text="特殊要求"
+                    style="@style/content_main_text" />
+
+                <TextView
+                    style="@style/content_main_edit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/editText"
+                    android:layout_weight="1" />
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:id="@id/daikuan"
+                    android:onClick="thisClick"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="3.0dip">
+
+                    <View
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/edit_check_selector"
+                        android:layout_width="12.0dip"
+                        android:layout_height="12.0dip"
+                        android:layout_marginRight="5.0dip" />
+
+                    <TextView
+                        android:textColor="@color/lightgray"
+                        android:layout_height="fill_parent"
+                        android:text="贷款"
+                        android:padding="0dp"
+                        style="@style/content_main_text" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:id="@id/safe_money"
+                    android:onClick="thisClick"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="3.0dip"
+                    android:gravity="right">
+
+                    <View
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/edit_check_selector"
+                        android:id="@id/safe_moneyCheck"
+
+                        android:layout_width="12.0dip"
+                        android:layout_height="12.0dip"
+                        android:layout_marginRight="5.0dip" />
+
+                    <TextView
+                        android:textColor="@color/lightgray"
+                        android:id="@id/safe_moneyText"
+                        android:text="保价"
+                        android:padding="0dp"
+                        style="@style/content_main_text"
+                        android:layout_height="match_parent" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:onClick="thisClick"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:id="@id/choose_incubator"
+                    android:gravity="right">
+
+                    <View
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/edit_check_selector"
+                        android:id="@id/choose_incubatorCheck"
+                        android:layout_width="12.0dip"
+                        android:layout_height="12.0dip"
+                        android:layout_marginRight="5.0dip" />
+
+                    <TextView
+                        android:padding="0dp"
+                        android:textColor="@color/lightgray"
+                        android:layout_height="fill_parent"
+                        android:id="@id/choose_incubatorText"
+                        android:text="保温箱配送"
+                        style="@style/content_main_text" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@id/daikuanshow"
+            android:visibility="gone"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                style="@style/line.x"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageButton2" />
+
+            <LinearLayout style="@style/content_main_linear_line.2">
+
+                <TextView
+                    android:text="贷款金额"
+                    style="@style/content_main_text" />
+
+                <EditText style="@style/content_main_edit"
+                    android:layout_height="match_parent"
+                    android:hint="请输入贷款金额"
+                    android:gravity="right|center_vertical"
+                    android:layout_weight="1"
+                    android:inputType="number"
+                    android:layout_width="match_parent"
+                    android:layout_marginRight="0dp"/>
+            </LinearLayout>
+
+            <ImageButton style="@style/line.x" />
+
+            <LinearLayout style="@style/content_main_linear_line.2"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="代收货款扣除1%转账费，每周三、五结算打款"
+                    style="@style/content_main_text"
+                    android:textColor="@android:color/holo_orange_dark" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        style="@style/content_main_linear"
+>
+        <LinearLayout
+            style="@style/content_main_linear_line.1"
+            >
+        <TextView
+            android:text="发货时间"
+            style="@style/content_main_text" />
+
+        <TextView style="@style/content_main_edit" />
+
+        <TextView
+            android:text="立即发货"
+            style="@style/content_main_text"
+            android:gravity="right"
+            android:id="@id/ljfh"
+            android:onClick="thisClick"
+
+           />
+
+        <ImageView
+            style="@style/menu_send"
+             />
+</LinearLayout>
+    </LinearLayout>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:gravity="bottom"
+        android:layout_alignParentBottom="true"
+
+        android:layout_height="40dp"
+        android:background="@android:color/background_light">
+
+        <ImageView
+            android:background="@drawable/account_tip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical|center_horizontal"
+            android:layout_alignParentRight="false"
+            android:id="@+id/imageView2"
+            android:padding="5dp" />
+
+        <TextView
+
+            android:textColorHint="@color/lightgray"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:hint="费用"
+            android:gravity="center_vertical" />
+
+        <TextView
+
+            android:textColorHint="?attr/colorAccent"
+            android:gravity="center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:hint="￥8.00"
+            android:maxLength="25"
+            android:textSize="20dp"
+            android:id="@+id/textView4" />
+
+        <TextView
+
+            android:textColorHint="@color/lightgray"
+            android:gravity="center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:hint="起"
+            android:maxLength="20"
+            android:id="@+id/textView6"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@id/intent_action"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:background="@color/colorAccent"
+            android:layout_height="match_parent"
+            android:text="去支付"
+            android:onClick="thisClick"
+            android:layout_width="68dp"/>
+    </LinearLayout>
+
+
+</RelativeLayout>

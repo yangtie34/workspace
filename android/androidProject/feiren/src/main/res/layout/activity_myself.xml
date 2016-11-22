@@ -1,0 +1,562 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#fff0f0f0"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:background="#fff5f5f5">
+
+        <View
+            android:id="@id/back"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/img_back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="我"
+            android:textColor="#ff444444"
+            android:textSize="19dp" />
+
+        <ImageView
+            android:id="@id/setting"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:scaleType="center"
+            android:src="@drawable/setting_icon"
+             />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@id/swipe_container"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1">
+
+        <ScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_myself"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="105.0dip"
+                        android:layout_height="115.0dip"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="40.0dip">
+
+                        <LinearLayout
+                            android:layout_width="105.0dip"
+                            android:layout_height="105.0dip"
+                            android:background="@drawable/self_user_head_bg"
+                            android:gravity="center">
+
+                            <TextView
+                                android:id="@id/myself_head"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_margin="5.0dip"
+                                android:background="@drawable/touxiang"
+                                />
+                        </LinearLayout>
+
+                        <View
+                            android:id="@id/myself_head_special"
+                            android:layout_width="fill_parent"
+                            android:layout_height="30.0dip"
+                            android:layout_alignParentBottom="true"
+                            android:background="@drawable/icon_specialforces"
+                             />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5.0dip">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@id/user_name"
+                                style="@style/myself_style_title"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="王二" />
+
+                            <RatingBar
+                                android:id="@id/comment_rating"
+                                style="@style/selfRatingBar"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:clickable="false"
+                                android:isIndicator="true"
+                                android:max="5"
+                                android:rating="0.0"
+                                android:stepSize="0.1" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center_horizontal"
+                                android:gravity="center_horizontal"
+                                android:minHeight="1dp"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@id/job_num_txt"
+                                    style="@style/myself_style"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="UU工号：" />
+
+                                <TextView
+                                    android:id="@id/order_response"
+                                    style="@style/myself_style"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="123456" />
+
+                                <TextView
+                                    android:id="@id/service_score"
+                                    style="@style/myself_style"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text=" | " />
+
+                                <TextView
+                                    android:id="@+id/textView4"
+                                    style="@style/myself_style"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="未签约"
+                                    android:layout_weight="1" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@id/account_control"
+                            android:layout_width="110.0dip"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="-10.0dip"
+                            android:layout_marginRight="37.0dip"
+                            android:background="@drawable/account_selector"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:paddingBottom="5.0dip"
+                            android:paddingLeft="15.0dip"
+                            android:paddingRight="5.0dip"
+                            android:paddingTop="5.0dip">
+
+                            <TextView
+                                android:id="@id/account_money"
+                                style="@style/myself_style_title"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="￥0" />
+
+                            <TextView
+                                style="@style/myself_style"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="账户余额" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@id/credit_control"
+                            android:layout_width="110.0dip"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="37.0dip"
+                            android:layout_marginRight="-10.0dip"
+                            android:background="@drawable/account_selector_right"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:paddingBottom="5.0dip"
+                            android:paddingLeft="5.0dip"
+                            android:paddingRight="15.0dip"
+                            android:paddingTop="5.0dip">
+
+                            <TextView
+                                android:id="@id/my_credit"
+                                style="@style/myself_style_title"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0" />
+
+                            <TextView
+                                style="@style/myself_style"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="信用积分" />
+                        </LinearLayout>
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:background="@drawable/dark_jobnum"
+                        android:gravity="center_horizontal"
+                        android:minHeight="0dp"
+                        android:orientation="horizontal"
+                        android:paddingBottom="5.0dip"
+                        android:paddingLeft="10.0dip"
+                        android:paddingRight="10.0dip"
+                        android:paddingTop="5.0dip">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:gravity="center_vertical|center_horizontal"
+                            android:orientation="vertical"
+                            android:layout_weight="1">
+
+                            <TextView
+                                android:id="@id/user_name"
+                                style="@style/myself_style_title"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="10" />
+
+                            <TextView
+                                android:id="@id/service_score"
+                                style="@style/myself_style"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="服务指数" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:gravity="center_vertical|center_horizontal"
+                            android:orientation="vertical"
+                            android:layout_weight="1">
+
+                            <TextView
+                                android:id="@id/user_name"
+                                style="@style/myself_style_title"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="10%" />
+
+                            <TextView
+                                android:id="@id/service_score"
+                                style="@style/myself_style"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="指派订单响应率" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="120.0dip"
+                        android:background="#fff5f5f5">
+
+                        <View
+                            android:background="#ffdddddd"
+                            android:layout_width="fill_parent"
+                            android:layout_alignParentTop="true"
+                            android:layout_height="2px"
+                            android:layout_marginTop="100dp" />
+
+                        <TextView
+                            android:id="@id/user_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="今日成就"
+                            android:textColor="@color/black"
+                            android:textSize="19.0dip"
+                            android:paddingTop="10dp"
+                            android:gravity="center_horizontal" />
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:id="@id/llayout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="20.0dip"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true">
+
+                            <ImageView
+                                android:layout_gravity="center_vertical"
+                                android:padding="5.0dip"
+                                android:clickable="true"
+                                android:saveEnabled="true"
+                                android:layout_width="17.0dip"
+                                android:layout_height="17.0dip"
+                                android:src="@drawable/page_indicator_bg" />
+
+                            <ImageView
+                                android:layout_gravity="center_vertical"
+                                android:padding="5.0dip"
+                                android:clickable="true"
+                                android:layout_width="17.0dip"
+                                android:layout_height="17.0dip"
+                                android:src="@drawable/page_indicator_bg" />
+                        </LinearLayout>
+
+                        <RelativeLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    style="@style/myself_style"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/lightgray"
+                                    android:text="奔跑里程"
+                                    android:id="@+id/textView7" />
+
+                                <TextView
+                                    android:id="@+id/textView8"
+                                    style="@style/myself_style_title"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/black"
+                                    android:text="0公里" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@id/account_control"
+                                android:layout_width="110.0dip"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="-10.0dip"
+                                android:layout_marginRight="37.0dip"
+                                android:background="@drawable/account_selector"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                android:paddingBottom="5.0dip"
+                                android:paddingLeft="15.0dip"
+                                android:paddingRight="5.0dip"
+                                android:paddingTop="5.0dip">
+
+                                <TextView
+                                    style="@style/myself_style"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/lightgray"
+                                    android:text="完成订单" />
+
+                                <TextView
+                                    android:id="@id/account_money"
+                                    style="@style/myself_style_title"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/black"
+                                    android:text="0笔" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@id/credit_control"
+                                android:layout_width="110.0dip"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="37.0dip"
+                                android:layout_marginRight="-10.0dip"
+                                android:background="@drawable/account_selector_right"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                android:paddingBottom="5.0dip"
+                                android:paddingLeft="5.0dip"
+                                android:paddingRight="15.0dip"
+                                android:paddingTop="5.0dip">
+
+                                <TextView
+                                    style="@style/myself_style"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/lightgray"
+                                    android:text="获得收益" />
+
+                                <TextView
+                                    android:id="@id/my_credit"
+                                    style="@style/myself_style_title"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/black"
+                                    android:text="0.00元" />
+
+                            </LinearLayout>
+
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#fff5f5f5"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textView5"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="我的技能"
+                            android:textColor="@color/black"
+                            android:textSize="19.0dip"
+                            android:paddingTop="10dp"
+                            android:gravity="center_horizontal" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:minHeight="0dp"
+                            android:orientation="horizontal"
+                            android:paddingBottom="5.0dip"
+                            android:paddingLeft="10.0dip"
+                            android:paddingRight="10.0dip"
+                            android:paddingTop="5.0dip"
+                            android:gravity="center_vertical">
+
+                            <TextView
+                                android:layout_width="51dp"
+                                android:layout_height="51dp"
+                                android:background="@drawable/share_weixin"
+                                android:id="@+id/textView3"
+                                android:layout_weight="1" />
+
+                            <TextView
+                                android:layout_width="51dp"
+                                android:layout_height="51dp"
+                                android:background="@drawable/share_weixin" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="right"
+                            android:minHeight="0dp"
+                            android:orientation="horizontal"
+                            android:paddingBottom="5.0dip"
+                            android:paddingLeft="10.0dip"
+                            android:paddingRight="10.0dip"
+                            android:paddingTop="5.0dip"
+                            android:gravity="right"
+                            android:layout_weight="1">
+
+                            <Button
+                                android:id="@id/user_name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="管理"
+                                android:textColor="@color/black"
+                                android:textSize="19.0dip"
+                                android:background="@drawable/btn_list_checked" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <View
+                        android:background="#ffdddddd"
+                        android:layout_width="fill_parent"
+                        android:layout_alignParentTop="true"
+                        android:id="@+id/view"
+                        android:layout_height="1px" />
+
+                    <include
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        layout="@layout/finals_share" />
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/page_bg"
+                        android:gravity="center_horizontal">
+
+                        <LinearLayout
+                            android:id="@id/share"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="30.0dip"
+                            android:layout_marginTop="36.0dip"
+                            android:background="@drawable/self_share_bg"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:paddingBottom="10.0dip"
+                            android:paddingLeft="17.0dip"
+                            android:paddingRight="17.0dip"
+                            android:paddingTop="10.0dip">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/self_share_icon" />
+
+                            <TextView
+                                style="@style/myself_style_share"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="小人物大贡献，邀朋友一起做跑男~" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@id/myself_panel"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10.0dip"
+                    android:layout_marginRight="10.0dip"
+                    android:layout_marginTop="10.0dip"
+                    android:background="@*android:color/transparent"
+                    android:orientation="vertical" />
+            </LinearLayout>
+        </ScrollView>
+    </RelativeLayout>
+
+</LinearLayout>

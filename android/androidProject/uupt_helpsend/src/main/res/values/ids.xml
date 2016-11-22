@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="main_view" type="id" />
+    <item name="switch_addr" type="id" />
+    <item name="shNumber" type="id" />
+    <item name="daikuan" type="id" />
+    <item name="safe_money" type="id" />
+    <item name="choose_incubator" type="id" />
+    <item name="daikuanshow" type="id" />
+    <item name="timezone_title" type="id" />
+    <item name="cancel" type="id" />
+    <item name="sure" type="id" />
+    <item name="wplx" type="id" />
+    <item name="ljfh" type="id" />
+    <item name="intent_action" type="id" />
+    <item name="choose_incubatorCheck" type="id" />
+    <item name="choose_incubatorText" type="id" />
+    <item name="safe_moneyCheck" type="id" />
+    <item name="safe_moneyText" type="id" />
+</resources>

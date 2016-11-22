@@ -1,0 +1,108 @@
+<resources>
+    <style name="matchwh">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:focusable">true</item>
+        <item name="android:focusableInTouchMode">true</item>
+    </style>
+    <style name="wrapwh">
+        <item name="android:focusable">true</item>
+        <item name="android:focusableInTouchMode">true</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Dark" />
+
+
+
+
+    <style name="content_main" parent="matchwh">
+        <item name="android:background">?android:attr/colorControlHighlight</item>
+        <item name="android:orientation">vertical</item>
+
+
+    </style>
+    <style name="content_main_linear" parent="matchwh">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@android:color/white</item>
+        <item name="android:layout_marginBottom">16dp</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingRight">10dp</item>
+    </style>
+    <style name="content_main_linear_line" parent="matchwh">
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+    <style name="content_main_linear_line.2" >
+        <item name="android:layout_height">40dp</item>
+    </style>
+    <style name="content_main_linear_line.1">
+        <item name="android:layout_height">45dp</item>
+    </style>
+
+    <style name="line" parent="matchwh">
+        <item name="android:background">#FF909090</item>
+    </style>
+    <style name="line.x">
+        <item name="android:layout_height">1px</item>
+    </style>
+    <style name="line.y">
+        <item name="android:layout_width">1px</item>
+    </style>
+    <style name="line.y.right">
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:layout_marginBottom">5dp</item>
+        <item name="android:layout_marginLeft">5dp</item>
+    </style>
+
+    <style name="content_main_text" parent="wrapwh">
+        <item name="android:textAlignment">gravity</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingRight">10dp</item>
+        <item name="android:textSize">13.0dip</item>
+        <item name="android:textColor">#99444444</item>
+        <item name="android:textColorHint">@color/lighttestgray</item>
+    </style>
+    <style name="content_main_edit" parent="matchwh">
+        <item name="android:textSize">14.0dip</item>
+        <item name="android:textColor">#ff444444</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">45.0dip</item>
+        <item name="android:background">#ffffffff</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingLeft">10.0dp</item>
+        <item name="android:ems">10</item>
+        <item name="android:layout_weight">0.97</item>
+        <item name="android:textColorHint">@color/lightgray</item>
+    </style>
+    <style name="menu_send" parent="matchwh">
+        <item name="android:layout_width">14dp</item>
+        <item name="android:src">@drawable/icon_arrow_right</item>
+        <item name="android:layout_marginRight">0dp</item>
+        <item name="android:gravity">right</item>
+    </style>
+    <style name="btn_star" parent="matchwh">
+        <item name="android:layout_height">20dp</item>
+        <item name="android:layout_width">25dp</item>
+        <item name="android:src">@drawable/collect_selector</item>
+        <item name="android:layout_marginRight">0dp</item>
+        <item name="android:gravity">right</item>
+    </style>
+    <style name="timezone_title_button">
+        <item name="android:textSize">14.0dip</item>
+        <item name="android:textColor">@color/timezone_line</item>
+    </style>
+</resources>

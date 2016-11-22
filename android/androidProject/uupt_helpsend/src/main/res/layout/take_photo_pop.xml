@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal">-->
+
+    <LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/pop_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:orientation="vertical">
+
+        <View
+        android:background="@color/timezone_line"
+        android:layout_width="fill_parent"
+        android:layout_height="1.0dip"
+            android:layout_marginBottom="5dp"
+        android:id="@+id/view2" />
+
+    <RelativeLayout
+        android:background="#ffffffff"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="10dp">
+
+        <TextView
+            android:textColor="@drawable/add_safe_txt_selector"
+            android:gravity="center"
+            android:id="@id/cancel"
+            android:background="@drawable/fgb_button_background"
+            android:layout_width="80.0dip"
+            android:layout_height="36.0dip"
+            android:layout_marginLeft="10.0dip"
+            android:text="取消"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            style="@style/timezone_title_button"
+            android:onClick="popCancel"/>
+
+        <TextView
+            android:textColor="@drawable/add_safe_txt_selector"
+            android:gravity="center"
+            android:id="@id/sure"
+            android:background="@drawable/fgb_button_background"
+            android:layout_width="80.0dip"
+            android:layout_height="36.0dip"
+            android:layout_marginRight="10.0dip"
+            android:text="确定"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            style="@style/timezone_title_button" />
+
+        <TextView
+            android:textSize="18.0dip"
+            android:textColor="#ff9c9c9c"
+            android:id="@id/timezone_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="物品类型"
+            android:layout_centerInParent="true" />
+    </RelativeLayout>
+    <com.chengyi.Android.content.mvc.ViewContainer
+        android:id="@+id/vc01"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+</LinearLayout>
+
+<!--
+</RelativeLayout>-->

@@ -1,0 +1,59 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+    <style name="single_edit">
+        <item name="android:textSize">15dp</item>
+        <item name="android:textColor">#ff444444</item>
+        <item name="android:textColorHint">#ffc8c8cd</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:background">@drawable/btn_dis_bgs</item>
+        <item name="android:paddingLeft">10.0dip</item>
+        <item name="android:paddingRight">10.0dip</item>
+        <item name="android:singleLine">true</item>
+    </style>
+    <style name="red_long_btn">
+        <item name="android:textSize">17dp</item>
+        <item name="android:textColor">#ffffffff</item>
+        <item name="android:background">@drawable/btn_top_bg</item>
+    </style>
+    <style name="myself_style_title">
+        <item name="android:textSize">19.0dip</item>
+        <item name="android:textColor">#ffffffff</item>
+    </style>
+    <style name="selfRatingBar" parent="@android:style/Widget.RatingBar">
+        <item name="android:maxHeight">25.0dip</item>
+        <item name="android:progressDrawable">@drawable/self_rating_bar</item>
+        <item name="android:minHeight">25.0dip</item>
+    </style>
+    <style name="myself_style">
+        <item name="android:textSize">13.0dip</item>
+        <item name="android:textColor">#ffffffff</item>
+    </style>
+    <style name="myself_style_share">
+        <item name="android:textSize">15.0dip</item>
+        <item name="android:textColor">#ffffffff</item>
+    </style>
+    <style name="lightgray_orange_txt">
+        <item name="android:textSize">17dp</item>
+        <item name="android:textColor">@drawable/lightgray_orange_selector</item>
+    </style>
+    <style name="bottom_back_time_navigation">
+        <item name="android:textSize">13.0dip</item>
+        <item name="android:textColor">#ffff8b03</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/indent_state_bottom_text_background</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">34.0dip</item>
+        <item name="android:layout_marginRight">10.0dip</item>
+    </style>
+    <style name="share_item_style">
+        <item name="android:textSize">14.0dip</item>
+        <item name="android:textColor">#ff444444</item>
+    </style>
+</resources>
