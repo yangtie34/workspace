@@ -1,6 +1,9 @@
 package com.chengyi.android.util;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
@@ -10,6 +13,9 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
+import android.widget.Toast;
+
+import com.chengyi.android.angular.scope;
 
 import static com.chengyi.android.angular.scope.activity;
 
@@ -44,11 +50,23 @@ public class AppMethed {
         showLayout.setOrientation(LinearLayout.VERTICAL);
         return showLayout;
     }
-    public static View getRootView()
+
+    /**
+     * 获取Activity根节点
+     * @return
+     */
+    public static LinearLayout getRootView()
     {
-        return ((ViewGroup) activity.findViewById(android.R.id.content)).getChildAt(0);
+        return (LinearLayout) ((ViewGroup) activity.findViewById(android.R.id.content)).getChildAt(0);
     }
-    //点击EditText文本框之外任何地方隐藏键盘的解决办法
+
+
+    /**
+     * 点击EditText文本框之外任何地方隐藏键盘的解决办法
+     * @param ev
+     * @param pubInterface
+     * @return
+     */
     public static boolean dispatchTouchEvent(MotionEvent ev,PubInterface pubInterface) {
         if (ev.getAction() == MotionEvent.ACTION_DOWN) {
             View v = activity.getCurrentFocus();
@@ -68,6 +86,13 @@ public class AppMethed {
         return activity.onTouchEvent(ev);
 
     }
+
+    /**
+     * 是否应该隐藏输入法
+     * @param v
+     * @param event
+     * @return
+     */
     public static  boolean isShouldHideInput(View v, MotionEvent event) {
         if (v != null && (v instanceof EditText)) {
             int[] leftTop = {0, 0};
@@ -87,7 +112,13 @@ public class AppMethed {
         }
         return false;
     }
-    //点击的是否为当前view
+
+    /**
+     * 点击的是否为此view
+     * @param v
+     * @param event
+     * @return
+     */
     public static boolean isViewArea(View v, MotionEvent event){
         if (v != null) {
             int[] leftTop = { 0, 0 };
@@ -108,12 +139,67 @@ public class AppMethed {
         return false;
 
     }
+
+    /**
+     * 获取view内序号为i的元素
+     * @param view
+     * @param i
+     * @return
+     */
     public static View getViewByIndex(View view,int i) {
         ViewGroup group= (ViewGroup) view;
         return group.getChildAt(i);
     }
+
+    /**
+     * 清除view内元素
+     * @param view
+     */
     public static void clear(View view) {
         ViewGroup group= (ViewGroup) view;
         group.removeAllViews();
+    }
+    /**
+     * 在当前view下跳转至cla Activity
+     * @param cla
+     */
+    public static void intent(Class cla){
+        Intent intent = new Intent();
+        intent.setClass(scope.activity, cla);
+        scope.activity.startActivity(intent);
+    }
+
+    /**
+     * 展示一个系统对话框
+     * @param title 对话框标题
+     * @param message 显示的内容
+     * @param positive 确定按钮响应事件
+     * @param negative 返回按钮响应事件
+     */
+    public static void confirm(String title, String message, final PubInterface positive, final PubInterface negative){
+        AlertDialog.Builder confirm=new AlertDialog.Builder(scope.activity);
+        confirm.setTitle(title);//设置对话框标题
+        confirm.setMessage(message);//设置显示的内容
+        if(positive!=null)
+            confirm.setPositiveButton("确定",new DialogInterface.OnClickListener() {//添加确定按钮
+            @Override
+            public void onClick(DialogInterface dialog, int which) {//确定按钮的响应事件
+                positive.run();
+            }});
+        if(negative!=null)
+        confirm.setNegativeButton("返回",new DialogInterface.OnClickListener() {//添加返回按钮
+            @Override
+            public void onClick(DialogInterface dialog, int which) {//确定按钮的响应事件
+                negative.run();
+            }});
+        confirm.show();
+    }
+
+    /**
+     * 弹出提示自动消失
+     * @param str
+     */
+    public static void alert(String str){
+        Toast.makeText(scope.activity.getApplicationContext(),str,Toast.LENGTH_SHORT).show();
     }
 }

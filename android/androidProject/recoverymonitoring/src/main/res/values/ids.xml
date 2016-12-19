@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="root_scroll" type="id" />
+    <item name="txt_forgetpwd" type="id" />
+    <item name="txt_register" type="id" />
+    <item name="img_logo" type="id" />
+    <item name="ly_username" type="id" />
+    <item name="edit_username" type="id" />
+    <item name="ly_userpwd" type="id" />
+    <item name="edit_userpwd" type="id" />
+    <item name="password_switch" type="id" />
+    <item name="btn_login" type="id" />
+    <item name="edit_old_pwd" type="id" />
+    <item name="edit_new_pwd" type="id" />
+    <item name="edit_confirm_pwd" type="id" />
+    <item name="btn_sure" type="id" />
+</resources>
