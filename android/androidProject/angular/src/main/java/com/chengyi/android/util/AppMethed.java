@@ -50,7 +50,6 @@ public class AppMethed {
         showLayout.setOrientation(LinearLayout.VERTICAL);
         return showLayout;
     }
-
     /**
      * 获取Activity根节点
      * @return

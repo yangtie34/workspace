@@ -4,14 +4,16 @@ import android.view.View;
 import android.widget.TextView;
 
 /**
+ * 基本app的基础view所对应的data
  * Created by administrator on 2016-10-21.
  */
 
 public class ViewData {
 
-    private String text="";
-    private boolean check=false;
-    private boolean show=true;
+    private String text="";//文本
+    private boolean check=false;//选中
+    private boolean show=true;//显示
+    private boolean enabled=true;//可编辑
     private View view;
 
     public String getText() {
@@ -62,4 +64,12 @@ public class ViewData {
         this.check = check;
     }
 
+    public boolean isEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(boolean enabled) {
+        view.setEnabled(enabled);//编辑与否
+        this.enabled = enabled;
+    }
 }
