@@ -3,6 +3,7 @@ package com.chengyi.android.angular;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -31,6 +32,7 @@ public class ViewParent extends LinearLayout implements AnglularView {
         RelativeLayout.LayoutParams relLayoutParams=new RelativeLayout.LayoutParams
                 (ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         this.setLayoutParams(relLayoutParams);
+        this.setOrientation(LinearLayout.VERTICAL);
     }
 
     public ViewParent(Context context, AttributeSet attr) {
@@ -157,5 +159,12 @@ public class ViewParent extends LinearLayout implements AnglularView {
 
     public String getReturn() {
         return Return;
+    }
+
+    public void show(){
+        this.setVisibility(View.VISIBLE);
+    }
+    public void hide(){
+        this.setVisibility(View.GONE);
     }
 }

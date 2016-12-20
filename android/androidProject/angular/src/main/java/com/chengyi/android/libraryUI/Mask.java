@@ -1,16 +1,10 @@
 package com.chengyi.android.libraryUI;
 
-import android.graphics.Color;
-import android.util.Log;
-import android.view.Gravity;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
-import android.view.animation.Animation.AnimationListener;
-import android.widget.RelativeLayout;
 
-import static com.chengyi.android.angular.scope.activity;
+import com.chengyi.android.util.AppMethed;
 
 
 /**
@@ -19,18 +13,49 @@ import static com.chengyi.android.angular.scope.activity;
  */
 
 public class Mask {
-    private static Mask mask=null;
-    private RelativeLayout showLayout = null;
-    private AlphaAnimation appearAnimation = new AlphaAnimation(0, 1);
-    private AlphaAnimation disappearAnimation = new AlphaAnimation(1, 0);
+    private static Mask mask;
+    private static long time=200;
+    private static View view;
+    private static AlphaAnimation appearAnimation = new AlphaAnimation(1f, 0.7f);
+    private static AlphaAnimation disappearAnimation = new AlphaAnimation(0.7f, 1f);
 
     private Mask(){
-        showLayout = new RelativeLayout(activity);
-        RelativeLayout.LayoutParams relLayoutParams=new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
-        showLayout.setGravity(Gravity.CENTER);
-        showLayout.setBackgroundColor(Color.parseColor("#86222222"));
-        showLayout.setVisibility(View.GONE);
-        activity.addContentView(showLayout, relLayoutParams);
+        view= AppMethed.getRootView();
+        appearAnimation.setDuration(time);
+        appearAnimation.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                view.setAlpha(0.7f);
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+        });
+        disappearAnimation.setDuration(time);
+        disappearAnimation.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                view.setAlpha(1f);
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+        });
+
     }
         //静态工厂方法
         public static Mask getInstance() {
@@ -40,39 +65,13 @@ public class Mask {
             return mask;
         }
     public void show(){
-        appearAnimation.setDuration(800);
-        Log.d("test","show="+(showLayout.getVisibility() == View.GONE));
-        disappearAnimation.setDuration(800);
-        if (showLayout.getVisibility() == View.GONE) {
-            showLayout.startAnimation(appearAnimation);
-            showLayout.setVisibility(View.VISIBLE);
-        }
+        view.setAlpha(0.7f);
+        //view.startAnimation(appearAnimation);
     }
     public void hide(){
-        showLayout.startAnimation(disappearAnimation);
-        disappearAnimation.setAnimationListener(new AnimationListener() {
-
-            @Override
-            public void onAnimationStart(Animation animation) {}
-
-            @Override
-            public void onAnimationRepeat(Animation animation) {}
-
-            @Override
-            public void onAnimationEnd(Animation animation) {
-                showLayout.setVisibility(View.GONE);
-            }
-        });
+        view.setAlpha(1f);
+        //view.startAnimation(disappearAnimation);
     }
-    public void toggle(){
-        if (showLayout.getVisibility() == View.GONE) {
-            show();
-        }else{
-            hide();
-        }
-    }
-    public RelativeLayout getShowLayout(){
-        return this.showLayout;
-    }
+
 
 }

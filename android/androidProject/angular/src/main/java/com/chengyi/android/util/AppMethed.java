@@ -44,7 +44,7 @@ public class AppMethed {
     public static LinearLayout getWrapLinearLayout(){
         LinearLayout showLayout = new LinearLayout(activity);
         LinearLayout.LayoutParams relLayoutParams=new LinearLayout.LayoutParams
-                (ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT,1);
+                (ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT,1);
         showLayout.setLayoutParams(relLayoutParams);
         showLayout.setGravity(Gravity.CENTER_HORIZONTAL);
         showLayout.setOrientation(LinearLayout.VERTICAL);

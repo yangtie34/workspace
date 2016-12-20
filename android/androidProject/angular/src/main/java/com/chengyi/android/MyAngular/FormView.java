@@ -13,7 +13,6 @@ import com.chengyi.android.angular.ViewData;
 import com.chengyi.android.angular.ViewParent;
 import com.chengyi.android.angular.scope;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -98,7 +97,7 @@ public class FormView extends ViewParent {
                 });
                 break;
         }
-        FormView.this.addView(textView);
+        //FormView.this.addView(textView);
         scope.watch(this.getData(), new DataListener<String>() {
             @Override
             public void hasChange(String text ) {
@@ -111,7 +110,7 @@ public class FormView extends ViewParent {
         for(int i=0;i<list.size();i++){
 
         }
-        this.addView();
+        //this.addView();
     }
 
 }

@@ -3,7 +3,11 @@ package com.chengyi.android.angular;
 import android.app.Activity;
 import android.view.View;
 
+import com.chengyi.android.util.MyApplication;
+
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -22,7 +26,7 @@ public class scope {
     private static Map<String,Object> activity_ = new HashMap<String,Object>();//activity运行期间
     private static Map<Integer,Map<String,Object>> angular_ = new HashMap<Integer,Map<String,Object>>();//angularView运行期间 <viewid,<k,v>>
     private static String ANGULAR_VIEW="ANGULAR_VIEW";
-    private static Map<String, DataListener> dataListener = new HashMap<String, DataListener>();//监听数据
+    private static Map<String, List<DataListener>> dataListener = new HashMap<>();//监听数据
 
     static {
         application_.put(THIS_ACTIVITY,null);
@@ -35,6 +39,7 @@ public class scope {
             preActivity=(Activity) application_.get(PRE_ACTIVITY);
             application_.put(THIS_ACTIVITY,obj);
             activity=(Activity) application_.get(THIS_ACTIVITY);
+            MyApplication.getInstance().addActivity((Activity) obj);
             destroy();
         }else if(obj instanceof AnglularView){
             ((AnglularView) obj).setId(getId());
@@ -48,7 +53,12 @@ public class scope {
         value.setView(view);
     }
     public static void watch(String key, DataListener listener){
-        if(key!=null)dataListener.put(key,listener);
+        if(key!=null){
+            if(dataListener.get(key)==null){
+                dataListener.put(key, new ArrayList<DataListener>());
+            }
+            dataListener.get(key).add(listener);
+        }
     }
     public static void put(String key,Object obj){
         putActivity(key,obj);
@@ -67,7 +77,10 @@ public class scope {
     }
     private static void runListener(String key,Object obj){
         if(dataListener.containsKey(key)&&syncLock==false){
-            dataListener.get(key).hasChange(obj);
+            List<DataListener> DataListeners=dataListener.get(key);
+            for (int i = 0; i <DataListeners.size() ; i++) {
+                DataListeners.get(i).hasChange(obj);
+            }
         }
     }
     protected static void destroy(){
