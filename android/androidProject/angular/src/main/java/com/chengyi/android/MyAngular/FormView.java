@@ -3,15 +3,20 @@ package com.chengyi.android.MyAngular;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.View;
-import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.TableLayout;
+import android.widget.TableRow;
 import android.widget.TextView;
 
 import com.chengyi.android.angular.DataListener;
-import com.chengyi.android.angular.R;
-import com.chengyi.android.angular.ViewData;
 import com.chengyi.android.angular.ViewParent;
 import com.chengyi.android.angular.scope;
+import com.chengyi.android.util.AppMethed;
+import com.chengyi.android.util.CSS;
 
 import java.util.List;
 import java.util.Map;
@@ -60,57 +65,58 @@ public class FormView extends ViewParent {
                createViews();
             }
         });
-        final ViewData textData=new ViewData();
-        switch (FormView.this.getParams()){
-            case "checkBox":
-                final CheckBox checkBox=new CheckBox(scope.activity);
-                checkBox.setClickable(false);
-                FormView.this.setOnClickListener(new OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        checkBox.setChecked(!checkBox.isChecked());
-                        FormView.this.setReturn(checkBox.isChecked());
-                    }
-                });
-                FormView.this.addView(checkBox);
-                TextView textView=new TextView(scope.activity);
-                scope.bind(textView,textData);
-                FormView.this.addView(textView);
-                break;
-            case "checkButton":
-                Button button= new Button(scope.activity);
 
-                scope.bind(button,textData);
 
-                FormView.this.addView(button);
-                button.setOnClickListener(new OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        textData.setCheck(!textData.isCheck());
-                        FormView.this.setReturn(textData.isCheck());
-                        if(textData.isCheck()){
-                            v.setBackground(scope.activity.getResources().getDrawable(R.drawable.sharp_boder));
-                        }else{
-                            v.setBackground(scope.activity.getResources().getDrawable(R.drawable.none_bg));
-                        }
-                    }
-                });
-                break;
-        }
-        //FormView.this.addView(textView);
-        scope.watch(this.getData(), new DataListener<String>() {
-            @Override
-            public void hasChange(String text ) {
-                textData.setText(text);
-            }
-        });
     }
-    protected void createViews(){
-
+    private void createViews(){
+        TextView textView=new TextView(scope.activity);
+        textView.setText(this.getParams().split("-")[0]);
+        this.addView(textView);
+        TableLayout tableLayout=new TableLayout(scope.activity);
+        tableLayout.setLayoutParams(CSS.LayoutParams.wrapAll());
         for(int i=0;i<list.size();i++){
-
+            tableLayout.addView(createRow(list.get(i)));
         }
-        //this.addView();
+        tableLayout.setEnabled(false);//不可编辑
+        this.addView(tableLayout);
+    }
+    private TableRow createRow(Map<String,Object> map){
+        /*{
+            *     name:'',
+            *     code:'',
+            *     type:'',//'checkBox',''
+            *     data:object
+                * }*/
+        TableRow tableRow=new TableRow(scope.activity);
+        TextView textView=new TextView(scope.activity);
+        textView.setText(map.get(this.name).toString());
+        tableRow.addView(textView);
+        View typeView=null;
+        switch (map.get(this.type).toString()){
+            case "input":
+                typeView=new EditText(scope.activity);
+                break;
+            case "radio":
+                typeView=new RadioGroup(scope.activity);
+                List<String> list= (List<String>) map.get(this.data);
+                for (int i = 0; i < list.size(); i++) {
+                    RadioButton radioButton=new RadioButton(scope.activity);
+                    radioButton.setText(list.get(i));
+                    ((RadioGroup)typeView).addView(radioButton);
+                }
+                break;
+            case "checkBox":
+                typeView= AppMethed.getWrapLinearLayout();
+                List<String> listcheckBox= (List<String>) map.get(this.data);
+                for (int i = 0; i < listcheckBox.size(); i++) {
+                    CheckBox checkBox=new CheckBox(scope.activity);
+                    checkBox.setText(listcheckBox.get(i));
+                    ((LinearLayout)typeView).addView(checkBox);
+                }
+                break;
+        }
+        tableRow.addView(typeView);
+        return tableRow;
     }
 
 }

@@ -1,8 +1,6 @@
 package com.chengyi.android.libraryUI;
 
 import android.view.View;
-import android.view.animation.AlphaAnimation;
-import android.view.animation.Animation;
 
 import com.chengyi.android.util.AppMethed;
 
@@ -14,48 +12,16 @@ import com.chengyi.android.util.AppMethed;
 
 public class Mask {
     private static Mask mask;
-    private static long time=200;
+    private static long time=2000;
+    private static int DELYED=5;
+    private static float everyAlpha= (float) (0.3*DELYED/time);
     private static View view;
-    private static AlphaAnimation appearAnimation = new AlphaAnimation(1f, 0.7f);
-    private static AlphaAnimation disappearAnimation = new AlphaAnimation(0.7f, 1f);
-
+    private static float alpha;
+    private static boolean show=true;
+    private static MyThread showThread;
+    private static MyThread hideThread;
     private Mask(){
         view= AppMethed.getRootView();
-        appearAnimation.setDuration(time);
-        appearAnimation.setAnimationListener(new Animation.AnimationListener() {
-            @Override
-            public void onAnimationStart(Animation animation) {
-
-            }
-
-            @Override
-            public void onAnimationEnd(Animation animation) {
-                view.setAlpha(0.7f);
-            }
-
-            @Override
-            public void onAnimationRepeat(Animation animation) {
-
-            }
-        });
-        disappearAnimation.setDuration(time);
-        disappearAnimation.setAnimationListener(new Animation.AnimationListener() {
-            @Override
-            public void onAnimationStart(Animation animation) {
-
-            }
-
-            @Override
-            public void onAnimationEnd(Animation animation) {
-                view.setAlpha(1f);
-            }
-
-            @Override
-            public void onAnimationRepeat(Animation animation) {
-
-            }
-        });
-
     }
         //静态工厂方法
         public static Mask getInstance() {
@@ -65,13 +31,81 @@ public class Mask {
             return mask;
         }
     public void show(){
-        view.setAlpha(0.7f);
-        //view.startAnimation(appearAnimation);
+        show=true;
+        if(hideThread!=null) {
+            hideThread.exit = true;
+            try {
+                hideThread.join();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        if(showThread!=null) {
+            showThread.exit = true;
+            try {
+                showThread.join();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        go();
     }
     public void hide(){
-        view.setAlpha(1f);
-        //view.startAnimation(disappearAnimation);
+        show=false;
+        if(hideThread!=null) {
+            hideThread.exit = true;
+            try {
+                hideThread.join();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        if(showThread!=null) {
+            showThread.exit = true;
+            try {
+                showThread.join();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        go();
     }
+    public void go(){
+        MyThread thread=new MyThread(false);
+        if(show==true){
+            showThread=thread;
+        }else{
+            hideThread=thread;
+        }
+        thread.start();
+    }
+    class MyThread extends Thread {
+        public volatile boolean exit = false;
+        public MyThread(boolean exit){
+            this.exit=exit;
+        }
+        @SuppressWarnings("Range")
+        @Override
+        public void run() {
+            try {
+                alpha=view.getAlpha();
+                if(exit==false&&alpha>=0.7f&&alpha<=1f){
+                    float setAlpha=show==true?alpha-everyAlpha:alpha+everyAlpha;
+                    if(setAlpha>1){
+                        setAlpha=1;
+                    }else if(setAlpha<0.7){
+                        setAlpha=0.7f;
+                    }
+                    view.setAlpha(setAlpha);
+                    sleep(DELYED);
+                    run();
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+                System.out.println("exception...");
+            }
+        }
+    };
 
 
 }
