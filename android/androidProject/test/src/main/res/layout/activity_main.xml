@@ -11,21 +11,21 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical"
     tools:context="com.example.administrator.test.MainActivity">
-<com.chengyi.android.MyAngular.RepeatView
+<com.chengyi.android.UI.RepeatView
     android:layout_width="300dp"
     android:layout_height="50dp"
     app:Data="text"
     app:params="1_2_1"
     app:state1="clickid"
     />
-    <com.chengyi.android.MyAngular.CurWheelView
+    <com.chengyi.android.UI.CurWheelView
         android:layout_width="match_parent"
         android:layout_height="500dp"
         app:Data="vc01"
-        ></com.chengyi.android.MyAngular.CurWheelView>
-    <com.chengyi.android.MyAngular.PagerView
+        ></com.chengyi.android.UI.CurWheelView>
+    <com.chengyi.android.UI.PagerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:Data="Pager"
-        ></com.chengyi.android.MyAngular.PagerView>
+        ></com.chengyi.android.UI.PagerView>
 </LinearLayout>
