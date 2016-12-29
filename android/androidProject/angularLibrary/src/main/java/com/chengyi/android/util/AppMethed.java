@@ -9,13 +9,15 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.AbsoluteLayout;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.Toast;
 
-import static com.chengyi.android.angular.scope.activity;
+import static com.chengyi.android.angular.core.Scope.activity;
 
 /**
  * Created by administrator on 2016-10-20.
@@ -52,9 +54,10 @@ public class AppMethed {
      * 获取Activity根节点
      * @return
      */
-    public static LinearLayout getRootView()
+    public static FrameLayout getRootView()
     {
-        return (LinearLayout) ((ViewGroup) activity.findViewById(android.R.id.content)).getChildAt(0);
+        //content:AbsoluteLayout, ChildAt(0):FrameLayout
+        return (FrameLayout) ((AbsoluteLayout) activity.findViewById(android.R.id.content)).getChildAt(0);
     }
 
 

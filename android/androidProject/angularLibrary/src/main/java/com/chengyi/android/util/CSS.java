@@ -43,11 +43,11 @@ public class CSS {
             public static int byAlpha(){
                 return R.style.animByAlpha;
             }
-            public static int byAlpha(){
-                return R.style..animByAlpha;
+            public static int formBottom(){
+                return R.style.animFormBottom;
             }
-            public static int byAlpha(){
-                return R.style.animByAlpha;
+            public static int formTop(){
+                return R.style.animFormTop;
             }
 
         }
