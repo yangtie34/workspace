@@ -10,5 +10,6 @@
         <attr name="state5" format="string"/>
         <attr name="state6" format="string"/>
         <attr name="Return" format="string"/>
+        <attr name="show" format="string"/>
     </declare-styleable>
 </resources>

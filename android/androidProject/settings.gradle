@@ -1,1 +1,1 @@
-include ':uupt_helpsend', ':test', ':angular', ':feiren', ':app2016-12-19', ':recoverymonitoring', ':angularLibrary'
+include ':uupt_helpsend', ':test', ':feiren', ':app2016-12-19', ':recoverymonitoring', ':angular'

@@ -6,11 +6,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.chengyi.android.angular.core.Scope;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.chengyi.android.angular.scope.activity;
 import static com.chengyi.android.angular.UI.widget.AbstractWheelTextAdapter.TEXT_VIEW_ITEM_RESOURCE;
 
 
@@ -20,7 +20,7 @@ public class ViewWheelAdapter extends AbstractWheelAdapter {
 
 	private static final int NO_RESOURCE = 0;
 	private LayoutInflater inflater;
-	private Context context= activity;
+	private Context context= Scope.activity;
 
 
 	public ViewWheelAdapter(List<View> views) {

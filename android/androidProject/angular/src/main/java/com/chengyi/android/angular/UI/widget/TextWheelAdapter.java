@@ -1,12 +1,12 @@
 package com.chengyi.android.angular.UI.widget;
 
 
-import com.chengyi.android.entity.TreeEntity;
+import com.chengyi.android.angular.entity.TreeEntity;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.chengyi.android.angular.scope.activity;
+import static com.chengyi.android.angular.core.Scope.activity;
 
 public class TextWheelAdapter extends AbstractWheelTextAdapter {
 

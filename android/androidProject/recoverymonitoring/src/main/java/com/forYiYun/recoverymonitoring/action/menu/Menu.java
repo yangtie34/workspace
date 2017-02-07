@@ -6,14 +6,15 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 
-import com.chengyi.android.UI.TreeView;
-import com.chengyi.android.angular.scope;
-import com.chengyi.android.entity.TreeEntity;
-import com.chengyi.android.UI.WindowPop;
-import com.chengyi.android.util.AppMethed;
+import com.chengyi.android.angular.UI.TreeView;
+import com.chengyi.android.angular.UI.WindowPop;
+import com.chengyi.android.angular.core.Scope;
+import com.chengyi.android.angular.entity.TreeEntity;
+import com.chengyi.android.util.ActivityUtil;
 import com.forYiYun.recoverymonitoring.R;
 
 import java.util.Calendar;
+
 
 /**
  * Created by administrator on 2016-12-19.
@@ -21,24 +22,25 @@ import java.util.Calendar;
 
 public class Menu {
     public static void topAdd(){
-        LinearLayout linearLayout =AppMethed.getRootView();
-        View toolBar= LayoutInflater.from(scope.activity).inflate( R.layout.tool_bar,null);
+        Scope scope= Scope.activity.scope;
+        LinearLayout linearLayout = ActivityUtil.getRootView();
+        View toolBar= LayoutInflater.from(Scope.activity).inflate( R.layout.tool_bar,null);
         linearLayout.addView(toolBar,0);
 
-        TreeView treeView=new TreeView("MenuData","MenuReturn");
-        scope.put("MenuData",getTreeEntity());
-        ScrollView scrollView=AppMethed.getScrollView();
+        TreeView treeView=new TreeView(scope,"MenuData","MenuReturn");
+        scope.key("MenuData").val(getTreeEntity());
+        ScrollView scrollView=ActivityUtil.getScrollView();
         scrollView.addView(treeView);
-        final WindowPop windowPopMenu=new WindowPop(scrollView,new Object[]{AppMethed.getRootView(), Gravity.LEFT,0,0});
+        final WindowPop windowPopMenu=new WindowPop(scrollView,Gravity.LEFT);
         toolBar.findViewById(R.id.menu).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 windowPopMenu.show();
             }
         });
-        TreeView treeView1=new TreeView("optionData","optionReturn");
-        scope.put("optionData",getTreeEntity1());
-        final WindowPop windowPopOption=new WindowPop(treeView1,new Object[]{toolBar.findViewById(R.id.option)});
+        TreeView treeView1=new TreeView(scope,"optionData","optionReturn");
+        scope.key("optionData").val(getTreeEntity1());
+        final WindowPop windowPopOption=new WindowPop(treeView1,toolBar.findViewById(R.id.option));
         toolBar.findViewById(R.id.option).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
