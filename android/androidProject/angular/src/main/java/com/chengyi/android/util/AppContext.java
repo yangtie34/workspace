@@ -47,6 +47,7 @@ public class AppContext extends Application {
             }
         }else{
             activitys.add(activity);
+            activityList.add(activity);
         }
     }
     // 添加Activity到容器中

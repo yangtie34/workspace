@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-include ':uupt_helpsend', ':test', ':feiren', ':app2016-12-19', ':recoverymonitoring', ':angular'
-=======
-include ':uupt_helpsend', ':test', ':angular', ':feiren', ':app2016-12-19', ':recoverymonitoring', ':angularLibrary', ':ccbcircle'
+
+include ':uupt_helpsend', ':test', ':feiren', ':app2016-12-19', ':recoverymonitoring', ':angular', ':ccbcircle'
 include ':library_zhy_CircleMenu'
 include ':sample_zhy_CircleMenu'
->>>>>>> 303f793e156c43a35d69ba68563366625d5dcc3b
