@@ -82,6 +82,44 @@ public class CSS {
                 return style;
             }
         }
+        /**
+         * half进入退出动画
+         */
+        public static class AnimationHalf{
+            public static int byBottom(){
+                return R.style.animByBottomHalf;
+            }
+            public static int byTop(){
+                return R.style.animByTopHalf;
+            }
+            public static int byLeft(){
+                return R.style.animByLeftHalf;
+            }
+            public static int byRight(){
+                return R.style.animByRightHalf;
+            }
+            public static int getAnimByGravity(int gravity){
+                int style=0;
+                switch (gravity){
+                    case Gravity.LEFT:
+                        style= byLeft();
+                        break;
+                    case Gravity.RIGHT:
+                        style= byRight();
+                        break;
+                    case Gravity.BOTTOM:
+                        style= byBottom();
+                        break;
+                    case Gravity.TOP:
+                        style= byTop();
+                        break;
+                    default:
+                        style=gravity;
+                        break;
+                }
+                return style;
+            }
+        }
 
     }
 

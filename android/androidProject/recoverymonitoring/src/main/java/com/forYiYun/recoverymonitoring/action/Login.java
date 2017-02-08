@@ -1,6 +1,7 @@
 package com.forYiYun.recoverymonitoring.action;
 
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 
 import com.chengyi.android.angular.core.AngularActivity;
@@ -19,7 +20,7 @@ public class Login extends AngularActivity {
         findViewById(R.id.btn_login).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AppContext.intent(Welcome.class);
+                AppContext.intent(Welcome.class, Gravity.RIGHT);
             }
         });
     }

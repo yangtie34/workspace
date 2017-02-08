@@ -1,10 +1,13 @@
 package com.chengyi.android.angular.core;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.chengyi.android.util.ActivityUtil;
 import com.chengyi.android.util.AppContext;
+
+import static com.chengyi.android.angular.core.Scope.activity;
 
 /**
  * Created by administrator on 2016-12-26.
@@ -36,6 +39,11 @@ public class AngularActivity extends Activity {
         //super.onBackPressed();
     }
 
-
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        setIntent(intent);//must store the new intent unless getIntent() will return the old one
+        activity=this;
+        AppContext.getInstance().newIntentLast(activity);
+         }
 
 }

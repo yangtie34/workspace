@@ -60,7 +60,6 @@ public class WindowPop extends PopupWindow {
     }
     private void init(View view) {
         this.view = view;
-// 需要设置一下此参数，点击外边可消失
         this.setBackgroundDrawable(new BitmapDrawable());
 // 设置点击窗口外边窗口消失
         this.setOutsideTouchable(true);
@@ -79,7 +78,7 @@ public class WindowPop extends PopupWindow {
         // 设置弹出窗体显示时的动画，从底部向上弹出
         //String styleName="windowPop";
 
-        this.setAnimationStyle(CSS.effect.Animation.getAnimByGravity(gravity));
+        this.setAnimationStyle(CSS.effect.AnimationHalf.getAnimByGravity(gravity));
 
     }
     private void showMode(Object[] args){

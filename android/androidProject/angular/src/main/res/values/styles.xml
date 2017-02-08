@@ -29,4 +29,24 @@
         <item name="android:windowEnterAnimation">@anim/in_from_right</item>
         <item name="android:windowExitAnimation">@anim/out_to_right</item>
     </style>
+    /*从底部half进入退出*/
+    <style name="animByBottomHalf" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/in_from_bottom_half</item>
+        <item name="android:windowExitAnimation">@anim/out_to_bottom_half</item>
+    </style>
+    /*从顶部half进入退出*/
+    <style name="animByTopHalf" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/in_from_top_half</item>
+        <item name="android:windowExitAnimation">@anim/out_to_top_half</item>
+    </style>
+    /*从左侧half进入退出*/
+    <style name="animByLeftHalf" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/in_from_left_half</item>
+        <item name="android:windowExitAnimation">@anim/out_to_left_half</item>
+    </style>
+    /*从右侧half进入退出*/
+    <style name="animByRightHalf" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/in_from_right_half</item>
+        <item name="android:windowExitAnimation">@anim/out_to_right_half</item>
+    </style>
 </resources>

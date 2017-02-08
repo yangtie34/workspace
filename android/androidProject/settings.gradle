@@ -2,3 +2,4 @@
 include ':uupt_helpsend', ':test', ':feiren', ':app2016-12-19', ':recoverymonitoring', ':angular', ':ccbcircle'
 include ':library_zhy_CircleMenu'
 include ':sample_zhy_CircleMenu'
+include ':pullToRefresh'

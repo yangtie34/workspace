@@ -12,8 +12,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".action.Login"/>
-        <activity android:name=".action.Welcome"/>
+        <activity android:name=".action.Login" android:launchMode="singleInstance"/>
+        <activity android:name=".action.Welcome" android:launchMode="singleInstance"/>
     </application>
 
 </manifest>

@@ -3,6 +3,8 @@ package com.chengyi.android.angular.core;
 import android.app.Application;
 import android.view.View;
 
+import com.chengyi.android.util.ScopeTool;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;

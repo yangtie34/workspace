@@ -6,9 +6,9 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.ViewFlipper;
 
-import com.chengyi.android.angular.UI.widget.OnWheelScrollListener;
-import com.chengyi.android.angular.UI.widget.ViewWheelAdapter;
-import com.chengyi.android.angular.UI.widget.WheelView;
+import com.chengyi.android.angular.UI.sourcecode.widget.OnWheelScrollListener;
+import com.chengyi.android.angular.UI.sourcecode.widget.ViewWheelAdapter;
+import com.chengyi.android.angular.UI.sourcecode.widget.WheelView;
 import com.chengyi.android.angular.core.DataListener;
 import com.chengyi.android.angular.core.Scope;
 import com.chengyi.android.angular.core.ViewParent;

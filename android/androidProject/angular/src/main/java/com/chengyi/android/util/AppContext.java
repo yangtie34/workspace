@@ -11,6 +11,8 @@ import com.chengyi.android.angular.core.Scope;
 import java.util.LinkedList;
 import java.util.List;
 
+import static com.chengyi.android.angular.core.Scope.activity;
+
 public class AppContext extends Application {
     private static List<Activity> activitys = null;
     private static List<Activity> activityList = null;
@@ -51,6 +53,11 @@ public class AppContext extends Application {
         }
     }
     // 添加Activity到容器中
+    public static void newIntentLast(Activity activity) {
+        if(!activityList.contains(activity)){
+            activityList.add(activity);
+        }
+    }
     public static void removeLast() {
         activityList.remove(activityList.size()-1);
     }
@@ -66,7 +73,7 @@ public class AppContext extends Application {
     }
     public static void intentPrev(){
         removeLast();
-        intent(activityList.get(activityList.size()-1).getClass(),0);
+        intent(activityList.get(activityList.size()-1).getClass(),Gravity.LEFT);
     }
     /**
      * 在当前Activity下跳转至cla Activity
@@ -75,16 +82,16 @@ public class AppContext extends Application {
      */
     public static void intent(Class cla,int gravity){
         Intent intent = new Intent();
-        intent.setClass(scope.activity, cla);
-        scope.activity.startActivity(intent);
+        intent.setClass(activity, cla);
+        activity.startActivity(intent);
         if(gravity== Gravity.BOTTOM){
-            scope.activity.overridePendingTransition(R.anim.in_from_bottom, R.anim.out_to_top);
+            activity.overridePendingTransition(R.anim.in_from_bottom, R.anim.out_to_top);
         }else if(gravity== Gravity.TOP){
-            scope.activity.overridePendingTransition(R.anim.in_from_top, R.anim.out_to_bottom);
+            activity.overridePendingTransition(R.anim.in_from_top, R.anim.out_to_bottom);
         }else if(gravity== Gravity.LEFT){
-            scope.activity.overridePendingTransition(R.anim.in_from_left,R.anim.out_to_right);
+            activity.overridePendingTransition(R.anim.in_from_left,R.anim.out_to_right);
         }else if(gravity== Gravity.RIGHT){
-            scope.activity.overridePendingTransition(R.anim.in_from_right, R.anim.out_to_left);
+            activity.overridePendingTransition(R.anim.in_from_right, R.anim.out_to_left);
         }else{
 
         }
