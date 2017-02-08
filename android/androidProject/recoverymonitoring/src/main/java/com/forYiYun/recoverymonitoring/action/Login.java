@@ -20,7 +20,7 @@ public class Login extends AngularActivity {
         findViewById(R.id.btn_login).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AppContext.intent(Welcome.class, Gravity.RIGHT);
+               AppContext.intent(Welcome.class, Gravity.RIGHT);
             }
         });
     }

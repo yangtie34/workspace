@@ -11,6 +11,9 @@ public class MainActivity extends AngularActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+       /* Intent intent = new Intent();
+        intent.setClass(this, Login.class);
+        startActivity(intent);*/
         AppContext.intent(Login.class);
     }
 }

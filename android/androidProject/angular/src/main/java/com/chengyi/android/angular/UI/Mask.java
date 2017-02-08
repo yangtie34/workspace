@@ -1,6 +1,5 @@
 package com.chengyi.android.angular.UI;
 
-import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.graphics.drawable.ColorDrawable;
 import android.widget.RelativeLayout;
@@ -35,13 +34,12 @@ public class Mask {
     private boolean show=true;
 
 
-    @SuppressLint("NewApi")
     private Mask(){
         view = new RelativeLayout(Scope.activity);
         view.setLayoutParams(CSS.LayoutParams.matchAll());
         //view.setBackgroundColor(Color.parseColor("#000000"));
         ColorDrawable dw = new ColorDrawable(0xb0000000);
-        view.setBackground(dw);
+        view.setBackgroundDrawable(dw);
         view.setAlpha(alphaStart);
         ActivityUtil.getRootView().addView(view);
     }
