@@ -23,4 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="right"
         android:id="@+id/option" />
+    <com.chengyi.android.angular.UI.CheckView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></com.chengyi.android.angular.UI.CheckView>
 </LinearLayout>
