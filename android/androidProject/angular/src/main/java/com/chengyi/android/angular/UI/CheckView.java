@@ -29,7 +29,7 @@ public class CheckView extends ViewParent {
     }
     public CheckView(Context context, AttributeSet attr) {
         super(context, attr);
-        init();
+
     }
 
     @Override
@@ -63,9 +63,9 @@ public class CheckView extends ViewParent {
                         textData.setCheck(!textData.isCheck());
                         CheckView.this.setReturn(textData.isCheck());
                         if(textData.isCheck()){
-                            v.setBackground(scope.activity.getResources().getDrawable(R.drawable.sharp_boder));
+                            v.setBackgroundDrawable(scope.activity.getResources().getDrawable(R.drawable.sharp_boder));
                         }else{
-                            v.setBackground(scope.activity.getResources().getDrawable(R.drawable.none_bg));
+                            v.setBackgroundDrawable(scope.activity.getResources().getDrawable(R.drawable.none_bg));
                         }
                     }
                 });

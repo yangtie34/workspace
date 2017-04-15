@@ -16,11 +16,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/textView3" />
-    <com.chengyi.android.angular.UI.CheckView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:Data=""
-        ></com.chengyi.android.angular.UI.CheckView>
+
     <TextView
         android:text="TextView"
         android:layout_width="match_parent"

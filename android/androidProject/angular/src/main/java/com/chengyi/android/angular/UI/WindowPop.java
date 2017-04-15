@@ -89,7 +89,12 @@ public class WindowPop extends PopupWindow {
         }else if(args.length==4){//showAtLocation(View parent, int gravity, int x, int y)：相对于父控件的位置（例如正中央Gravity.CENTER，下方Gravity.BOTTOM等），可以设置偏移或无偏移
             showAtLocation((View) args[0], (Integer) args[1], (Integer) args[2], (Integer) args[3]);
         }else{
-            showAsDropDown((View) args[0]);//showAsDropDown(View anchor)：相对某个控件的位置（正左下方），无偏移
+            View clickView=(View) args[0];
+            int[] location = new int[2];
+            clickView.getLocationOnScreen(location);
+            showAsDropDown(ActivityUtil.getRootView(), location[0],location[1]-ActivityUtil.getRootView().getHeight());// location[0],  location[1]);
+            this.view.bringToFront();
+            //showAsDropDown((View) args[0]);//showAsDropDown(View anchor)：相对某个控件的位置（正左下方），无偏移
         }
     }
     // 取消按钮
