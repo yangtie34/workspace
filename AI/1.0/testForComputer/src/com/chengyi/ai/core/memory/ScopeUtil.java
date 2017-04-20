@@ -2,6 +2,7 @@ package com.chengyi.ai.core.memory;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -43,16 +44,21 @@ public class ScopeUtil {
 	private static Object readObjectFromFile() {
 		Object temp = null;
 		File file = new File(fullPath);
+		 if (!file.exists()) {
+			 System.err.println("无此文件！"+fullPath); 
+		 }else
 		try {
 			FileInputStream in = new FileInputStream(file);
 			ObjectInputStream objIn = new ObjectInputStream(in);
 			temp = objIn.readObject();
 			objIn.close();
 			System.out.println("read object success!");
-		} catch (IOException e) {
+		} catch (FileNotFoundException e) {
 			System.out.println("read object failed");
 			e.printStackTrace();
 		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
 			e.printStackTrace();
 		}
 		return temp;

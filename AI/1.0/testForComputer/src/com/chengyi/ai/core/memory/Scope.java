@@ -1,6 +1,6 @@
 package com.chengyi.ai.core.memory;
 /**
- * AI记忆
+ * AI存档数据
  * @author Administrator
  *
  */
