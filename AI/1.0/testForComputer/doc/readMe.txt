@@ -15,3 +15,29 @@ VK_LEFT           左箭头                            VK_UNDEFINED             
 VK_RIGHT          右箭头                           VK_F1--VK_F12                F1 -- F12
 VK_ESCAPE       Esc键                              VK_0 --VK_9                    0 --- 9
 VK_TAB             Tab键                             VK_A --VK_Z                    A----Z
+
+
+物理实体
+对应知觉
+
+我的知觉 我的所能
+
+
+数据结构：
+
+  	yin:
+  	yang:
+ 记忆：
+
+yin:生命
+  yin:今生
+     yin:身体（外设）
+	  	yin:actions
+	  	yang:gets
+	 yang:哲思因果（如同意识）
+	 	yin:()
+	 	yang:
+  yang:前世（如同末那识）
+	 yin:
+	 yang:
+yang:阿赖耶识（以备超越多个生命的调度）

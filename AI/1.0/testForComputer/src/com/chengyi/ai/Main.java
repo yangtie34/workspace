@@ -1,10 +1,10 @@
 package com.chengyi.ai;
 
+import com.chengyi.ai.core.AI;
+
 public class Main {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		AI.run();
 	}
-
 }

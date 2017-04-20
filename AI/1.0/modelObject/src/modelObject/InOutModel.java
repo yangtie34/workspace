@@ -3,8 +3,8 @@ package modelObject;
 import java.util.List;
 
 public class InOutModel {
-	private Object in;//输入
-	private List<InOutModel> nextLevels;//同步执行其他流程
-	private Object action;//执行
-	private Object out;//输出
+	private Object in;//杈撳叆
+	private List<InOutModel> nextLevels;//鍚屾鎵ц鍏朵粬娴佺▼
+	private Object action;//鎵ц
+	private Object out;//杈撳嚭
 }
