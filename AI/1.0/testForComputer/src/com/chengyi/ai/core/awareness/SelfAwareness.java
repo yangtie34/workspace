@@ -1,21 +1,24 @@
 package com.chengyi.ai.core.awareness;
 
-import com.chengyi.ai.core.memory.Scope;
-import com.chengyi.ai.core.memory.SelfScopeStructure;
 
+import com.chengyi.ai.core.thinking.Think;
+
+/**
+ * 意识具有分别功能
+ * @author Administrator
+ *
+ */
 public class SelfAwareness {
-
-	public static Scope scope;
-	
+	//思维
+	private static Think think;
 	/**
-	 * 初始化意识数据并调用意识运行
+	 * 初始化意识
 	 */
 	public static void init() {
-		scope=SelfScopeStructure.getAwareness();
-		// TODO 初始化意识数据
-		start();
+		think=Think.newInstance();
+		// TODO 初始化意识
+		
 	}
-	
 	/**
 	 * 运行
 	 */
@@ -34,5 +37,6 @@ public class SelfAwareness {
 	public static void destory() {
 		// TODO 停止意识
 	}
+
 	
 }

@@ -4,6 +4,7 @@ import com.chengyi.ai.core.memory.Scope;
 import com.chengyi.ai.core.memory.SelfScopeStructure;
 
 public class BodyPCI {
+	
 	public static Scope scope;
 	/**
 	 * 初始化身体数据并调用身体运行

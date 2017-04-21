@@ -16,6 +16,6 @@ public class Focus implements Action{
 	}
 	@Override
 	public int getId() {
-		return 100;
+		return 104;
 	}
 }

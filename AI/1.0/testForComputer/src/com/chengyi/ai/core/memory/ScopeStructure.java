@@ -1,19 +1,15 @@
 package com.chengyi.ai.core.memory;
 
-import com.chengyi.ai.core.AI;
 
-//yin:生命
-//yin:今生
-//   yin:身体（外设）
-//	  	yin:actions
-//	  	yang:gets
-//	 yang:哲思因果（如同意识）
-//	 	yin:()
-//	 	yang:
-//yang:前世（如同末那识）
-//	 yin:
-//	 yang:
-//yang:阿赖耶识（以备超越多个生命的调度）
+//scope:今生
+//	 daoYin:前世（如同末那识）
+//	 daoYang:阿赖耶识（以备超越多个生命的调度）
+//yin:身体（外设）
+// 	yin:actions
+// 	yang:gets
+//yang:哲思因果（如同意识）
+//	yin:()
+//	yang:
 public class ScopeStructure {
 	
 	private static Scope scope;//天道
@@ -22,7 +18,7 @@ public class ScopeStructure {
 	 * @return
 	 */
 	public static Scope getGod() {
-		return scope.getYang();
+		return scope.getDaoYang();
 	}
 	/**
 	 * 获取某生的身体

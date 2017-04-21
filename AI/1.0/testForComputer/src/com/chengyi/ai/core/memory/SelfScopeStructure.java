@@ -8,7 +8,7 @@ package com.chengyi.ai.core.memory;
  */
 public class SelfScopeStructure {
 	
-	public static Scope scope=ScopeStructure.getScope().getYin().getYin();//今生今世
+	public static Scope scope=ScopeStructure.getScope();//今生今世
 	/**
 	 *获取今生今世
 	 * @return
@@ -24,10 +24,10 @@ public class SelfScopeStructure {
 		return scope.getYin();
 	}
 	/**
-	 * 获取某生的意识
+	 * 获取今生的思维
 	 * @return
 	 */
-	public static Scope getAwareness() {
+	public static Scope getThinking() {
 		return scope.getYang();
 	}
 }

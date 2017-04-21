@@ -23,21 +23,23 @@ VK_TAB             Tab键                             VK_A --VK_Z               
 我的知觉 我的所能
 
 
+yin yang 
+分子为分
+pyin为父节点
+pyang 为哲学概念
 数据结构：
 
   	yin:
   	yang:
  记忆：
 
-yin:生命
-  yin:今生
+  scope:今生
+  	 daoYin:前世（如同末那识）
+  	 daoYang:阿赖耶识（以备超越多个生命的调度）
      yin:身体（外设）
 	  	yin:actions
 	  	yang:gets
 	 yang:哲思因果（如同意识）
 	 	yin:()
 	 	yang:
-  yang:前世（如同末那识）
-	 yin:
-	 yang:
-yang:阿赖耶识（以备超越多个生命的调度）
+
